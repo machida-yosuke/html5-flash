@@ -1,38 +1,37 @@
 ﻿package  src{
-	import flash.display.Sprite;
+  import flash.display.*;
   import flash.events.*;
+  import src.view.*;
+  import flash.utils.*;
 
-	public class Main extends Sprite{
-    var container:Sprite = new Sprite();
-    var line:Sprite = new Sprite();
+  public class Main extends Sprite{
+    private var container:Sprite = new Sprite();
+    public static var flagLine:Boolean = true;
+    public static var lineBold:int = 1;
+    private var line:Line;
 
-		public function Main() {
-			// constructor code
-			container.graphics.beginFill(0x444444);
-			container.graphics.drawRect(0, 0, 1000, 1000);
-			addChild(container);
-      container.addEventListener(MouseEvent.MOUSE_DOWN, downMouse);
+    public function Main() {
+      if (stage) init();
+      else addEventListener(Event.ADDED_TO_STAGE, init);
 
-      function downMouse(events:MouseEvent):void{
-        container.addEventListener(MouseEvent.MOUSE_MOVE, drawHandler);
-        container.addEventListener(MouseEvent.MOUSE_UP, drawEnd);
-        line.graphics.lineStyle(1, 0xcc0000);
-        line.graphics.moveTo(events.stageX,events.stageY);
-        container.addChild(line);
-      }
+     function init(event:Event = null):void {
+      stage.align = StageAlign.TOP_LEFT;
+      line = new Line();
+      var btn:Btn = new Btn();
 
-      function drawHandler(events:MouseEvent):void{
-        line.graphics.lineStyle(1, 0xcc0000);
-        line.graphics.lineTo(events.stageX,events.stageY);
-        container.addChild(line);
-      }
+      Manager.init(line);
 
-      function drawEnd(events:MouseEvent):void{
-          line.graphics.endFill();
-        container.removeEventListener(MouseEvent.MOUSE_MOVE, drawHandler);
-        container.removeEventListener(MouseEvent.MOUSE_UP, drawEnd);
+      addChild(line);
+      addChild(btn);
 
+      line.addEvent();
+      btn.addEvent();
+      removeEventListener(Event.ADDED_TO_STAGE, init);
       }
 		}
+
+    public function onZoom(scale=2){
+      line.scaleX = scale;
+    }
 	}
 }
