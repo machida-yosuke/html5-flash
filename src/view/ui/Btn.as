@@ -1,4 +1,4 @@
-package  src.view.ui{
+﻿package  src.view.ui{
   import flash.display.Sprite;
   import flash.events.*;
   import src.*;
@@ -7,12 +7,12 @@ package  src.view.ui{
   public class Btn extends Sprite{
     var eraserBtn:Sprite = new Sprite();
     var lineBtn:Sprite = new Sprite();
-    var boldBtn:Sprite = new Sprite();
+    var colorBtn:Sprite = new Sprite();
     var zoomBtn:Sprite = new Sprite();
 
     public function Btn() {
       addChild(lineBtn);
-      addChild(colorBtn);ß
+      addChild(colorBtn);
       addChild(eraserBtn);
       addChild(zoomBtn);
 		}

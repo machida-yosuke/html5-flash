@@ -7,7 +7,7 @@ package  src.view.container{
   public class Line extends Sprite{
     public function Line() {
       graphics.beginFill(0xffffff);
-      graphics.drawRoundRect(27, 63, 1000, 952, 10, 10);
+      graphics.drawRoundRect(27, 64, 1000, 952, 10, 10);
     }
     public function addEvent():void {
       // constructor code
@@ -15,11 +15,27 @@ package  src.view.container{
 
       //文字を書く
       function downMouseLine(events:MouseEvent):void{
+        if(Manager.flag == 'Line'){
+          graphics.lineStyle(Manager.lineBold, Manager.colorPalet[Manager.colorNum])
+        }else if(Manager.flag == 'Eraser'){
+          graphics.lineStyle(Manager.eraserBold, 0xffffff);
+        }else if (Manager.flag == 'Zoom') {
+          if(Manager.flagZoomIn){
+            Manager.zoomX = events.localX;
+            Manager.zoomY = events.localY;
+            trace(Manager.zoomX);
+            trace(Manager.zoomY);
+            Manager.originalX = (1920 - 1054)/2;
+            Manager.originalY = (1080 - 1054)/2;
 
-        if(Manager.flagLine){
-          graphics.lineStyle(Manager.lineBold, 0x000000)
-        }else{
-          graphics.lineStyle(Manager.lineBold, 0xffffff);
+            Manager.zoom(2, -(Manager.zoomX ) + Manager.originalX, -(Manager.zoomY) + Manager.originalY);
+            Manager.flagZoomIn = false;
+            return;
+          }else{
+            Manager.zoom(1, Manager.originalX, Manager.originalY);
+            Manager.flagZoomIn = true;
+            return;
+          }
         }
 
         graphics.moveTo(events.localX,events.localY);

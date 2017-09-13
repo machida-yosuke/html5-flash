@@ -16,7 +16,9 @@
         container = new Container();
         ui = new Ui();
 
-        Manager.init(container);
+        Manager.initContainer(container);
+        Manager.initUi(ui);
+        
         addChild(container);
         addChild(ui);
         removeEventListener(Event.ADDED_TO_STAGE, init);

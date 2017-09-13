@@ -11,7 +11,7 @@ package  src.view.container{
       var urlReq:URLRequest=new URLRequest(path);
       var ld:Loader = new Loader();
       ld.load(urlReq);
-
+      
       addChild(ld);
     }
 	}
