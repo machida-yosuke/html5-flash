@@ -15,12 +15,14 @@
         stage.align = StageAlign.TOP_LEFT;
         container = new Container();
         ui = new Ui();
+        var uiAsideMc:MovieClip = new UiAsideMc;
 
         Manager.initContainer(container);
         Manager.initUi(ui);
         
         addChild(container);
         addChild(ui);
+        addChild(uiAsideMc);
         removeEventListener(Event.ADDED_TO_STAGE, init);
       }
 		}
