@@ -1,6 +1,11 @@
 ﻿package src {
+  import flash.display.*;
   import flash.utils.*;
+
+  import src.*;
   import src.view.*;
+  import src.view.container.*;
+
   import caurina.transitions.Tweener;
   import flash.events.*;
 	public class Manager {
@@ -18,11 +23,20 @@
     public static var lineBold:int = 1;
     public static var eraserBold:int = 8;
 
-    private static var _container:Container;
+    private static var container:MovieClip;
     private static var _ui:Ui;
 
-		public static function initContainer(container:Container) {
-      _container = container;
+		public static function initContainer(containerMc:MovieClip) {
+      container = containerMc;
+      var mc = containerMc.appMc;
+
+      var line:Line;
+
+      mc.graphics.beginFill(0x000000, 0);
+      mc.graphics.drawRect(0, 0, 1054, 1054);
+      line = new Line();
+      mc.addChild(line);
+      line.addEvent();
 		}
 
     public static function initUi(ui:Ui) {
@@ -30,7 +44,7 @@
 		}
 
     public static function zoom(scale:int, x:int, y:int):void {
-      Tweener.addTween(_container, {
+      Tweener.addTween(container, {
         x:x,
         y:y,
         scaleX:scale,
