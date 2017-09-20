@@ -27,12 +27,7 @@
 
       fiveCnt = 0;
 
-      uiAsideMc = new UiAsideMc;
-      uiAsideMc.scaleX = 0.75;
-      uiAsideMc.scaleY = 0.75;
-      uiAsideMc.x = 1800;
-      uiAsideMc.y = 200;
-      uiAsideMc.html5Btn.addEventListener(MouseEvent.CLICK, this.html5Hander);
+      uiAsideMc = mainMc.uiAsideMc;
 
       containerMc = mainMc.containerMc;
       appMc = containerMc.appMc;
@@ -44,9 +39,26 @@
       addChild(ui);
       addChild(uiAsideMc);
       removeEventListener(Event.ADDED_TO_STAGE, init);
+
+      uiAsideMc.candleBtn.addEventListener(MouseEvent.CLICK, this.candleHander);
+      uiAsideMc.senkoBtn.addEventListener(MouseEvent.CLICK, this.senkoHander);
+      uiAsideMc.mokugyoBtn.addEventListener(MouseEvent.CLICK, this.mokugyoHander);
+      uiAsideMc.html5Btn.addEventListener(MouseEvent.CLICK, this.html5Hander);
     }
 
-    private function html5Hander(event:Event = null) {
+    private function candleHander(event:Event = null):void {
+      trace("candle");
+    }
+
+    private function senkoHander(event:Event = null):void {
+      trace("senko");
+    }
+
+    private function mokugyoHander(event:Event = null):void {
+      trace("mokugyo");
+    }
+
+    private function html5Hander(event:Event = null):void {
       var len = fiveFrameArr.length;
       var fiveFrame = fiveFrameArr[fiveCnt % len];
       fiveMc.gotoAndPlay(fiveFrame);
