@@ -26,7 +26,7 @@ package  src.view{
       addChild(palet);
       addChild(glass);
       addChild(eraser);
-		}
+    }
 
     public function setColor(value:uint):void{
       var colorTransform:ColorTransform = new ColorTransform;
@@ -34,5 +34,5 @@ package  src.view{
       palet.transform.colorTransform = colorTransform;
       pen.transform.colorTransform = colorTransform;
     }
-	}
+  }
 }

@@ -8,7 +8,7 @@
 
   import caurina.transitions.Tweener;
   import flash.events.*;
-	public class Manager {
+  public class Manager {
     public static var flag:String = 'Line';
     public static var flagZoomIn:Boolean = true;
 
@@ -26,7 +26,7 @@
     private static var container:MovieClip;
     private static var _ui:Ui;
 
-		public static function initContainer(containerMc:MovieClip) {
+    public static function initContainer(containerMc:MovieClip) {
       container = containerMc;
       var mc = containerMc.appMc;
 
@@ -37,11 +37,11 @@
       line = new Line();
       mc.addChild(line);
       line.addEvent();
-		}
+    }
 
     public static function initUi(ui:Ui) {
       _ui = ui;
-		}
+    }
 
     public static function zoom(scale:int, x:int, y:int):void {
       Tweener.addTween(container, {
@@ -61,5 +61,5 @@
       }
       _ui.setColor(colorPalet[colorNum])
     }
-	}
+  }
 }

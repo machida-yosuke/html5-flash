@@ -19,6 +19,6 @@
       addChild(ld);
 
       addEventListener(MouseEvent.MOUSE_DOWN, Manager.chageColor);
-		}
-	}
+    }
+  }
 }

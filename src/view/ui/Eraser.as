@@ -19,6 +19,6 @@
       function useEraser(events:MouseEvent):void{
         Manager.flag = 'Eraser';
       }
-		}
-	}
+    }
+  }
 }

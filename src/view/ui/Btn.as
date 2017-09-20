@@ -15,7 +15,7 @@
       addChild(colorBtn);
       addChild(eraserBtn);
       addChild(zoomBtn);
-		}
+    }
 
     public function drawGraphics():void{
       eraserBtn.graphics.beginFill(0x09EF4A);
@@ -57,5 +57,5 @@
         removeEventListener(MouseEvent.MOUSE_DOWN, drawEraserPossible)
       }
     }
-	}
+  }
 }
