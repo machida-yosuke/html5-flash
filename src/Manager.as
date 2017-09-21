@@ -35,7 +35,7 @@
       mc.graphics.beginFill(0x000000, 0);
       mc.graphics.drawRect(0, 0, 1054, 1054);
       line = new Line();
-      mc.addChild(line);
+      mc.canvasMc.addChild(line);
       line.addEvent();
     }
 
