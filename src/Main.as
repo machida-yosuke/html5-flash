@@ -55,7 +55,7 @@
     }
 
     private function mokugyoHander(event:Event = null):void {
-      trace("mokugyo");
+      mainMc.mokugyoMc.gotoAndPlay("start");
     }
 
     private function html5Hander(event:Event = null):void {
