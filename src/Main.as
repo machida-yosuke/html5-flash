@@ -51,7 +51,7 @@
     }
 
     private function senkoHander(event:Event = null):void {
-      trace("senko");
+      mainMc.containerMc.senkoMc.gotoAndPlay("start");
     }
 
     private function mokugyoHander(event:Event = null):void {
