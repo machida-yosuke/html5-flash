@@ -21,5 +21,5 @@
         Manager.flag = 'Line';
       }
     }
-	}
+  }
 }

@@ -8,8 +8,6 @@ package  src.view{
 
   public class Ui extends Sprite{
     //private var btn:Btn;
-    private var uicontainer:UiContainer;
-    private var uicontainershadow:UiContainerShadow;
     private var pen:Pen;
     private var palet:Palet;
     private var glass:Glass;
@@ -19,20 +17,16 @@ package  src.view{
       graphics.drawRect(0, 0, 107, 611);
       x = 0;
       y = 235;
-      uicontainer = new UiContainer();
-      uicontainershadow = new UiContainerShadow();
       pen = new Pen();
       palet = new Palet();
       glass = new Glass();
       eraser = new Eraser();
 
-      addChild(uicontainershadow);
-      addChild(uicontainer);
       addChild(pen);
       addChild(palet);
       addChild(glass);
       addChild(eraser);
-		}
+    }
 
     public function setColor(value:uint):void{
       var colorTransform:ColorTransform = new ColorTransform;
@@ -40,5 +34,5 @@ package  src.view{
       palet.transform.colorTransform = colorTransform;
       pen.transform.colorTransform = colorTransform;
     }
-	}
+  }
 }

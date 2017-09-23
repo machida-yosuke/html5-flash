@@ -6,8 +6,8 @@ package  src.view.container{
 
   public class Line extends Sprite{
     public function Line() {
-      graphics.beginFill(0xffffff);
-      graphics.drawRoundRect(27, 64, 1000, 952, 10, 10);
+      graphics.beginFill(0x000000, 0);
+      graphics.drawRect(0, 47, 1000, 952);
     }
     public function addEvent():void {
       // constructor code
@@ -25,14 +25,14 @@ package  src.view.container{
             Manager.zoomY = events.localY;
             trace(Manager.zoomX);
             trace(Manager.zoomY);
-            Manager.originalX = (1920 - 1054)/2;
-            Manager.originalY = (1080 - 1054)/2;
+            Manager.originalX = 460;
+            Manager.originalY = 30;
 
-            Manager.zoom(2, -(Manager.zoomX ) + Manager.originalX, -(Manager.zoomY) + Manager.originalY);
+            Manager.zoom(2, - Manager.zoomX - Manager.originalX, - Manager.zoomY - Manager.originalY);
             Manager.flagZoomIn = false;
             return;
           }else{
-            Manager.zoom(1, Manager.originalX, Manager.originalY);
+            Manager.zoom(1, 0, 0);
             Manager.flagZoomIn = true;
             return;
           }
@@ -69,5 +69,5 @@ package  src.view.container{
         }
       }
     }
-	}
+  }
 }
