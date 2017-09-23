@@ -7,7 +7,7 @@ package  src.view.container{
   public class Line extends Sprite{
     public function Line() {
       graphics.beginFill(0x000000, 0);
-      graphics.drawRect(0, 47, 1000, 952);
+      graphics.drawRect(0, 0, 1000, 952);
     }
     public function addEvent():void {
       // constructor code
@@ -51,8 +51,8 @@ package  src.view.container{
             events.localX = 0;
           }
 
-          if(events.localY > 1054){
-            events.localY = 1054;
+          if(events.localY > 952){
+            events.localY = 952;
           }
 
           if(events.localY < 0){
