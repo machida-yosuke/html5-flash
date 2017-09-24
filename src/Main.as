@@ -47,7 +47,7 @@
     }
 
     private function candleHander(event:Event = null):void {
-      trace("candle");
+      mainMc.containerMc.candleMc.gotoAndPlay("start");
     }
 
     private function senkoHander(event:Event = null):void {
